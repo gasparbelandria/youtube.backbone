@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Youtube Plugin</title>
+  <meta name="description" content="Youtube Plugin">
+  <link rel="stylesheet" href="css/stylevzla.css">
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+<!--
+  <script src="http://code.jquery.com/jquery-1.9.0.min.js" charset="utf-8"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js" charset="utf-8"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.10/backbone-min.js" charset="utf-8"></script>
+-->
+  <script data-main="config" src="require.js"></script>
+
+  <!--<script src="js/models/video.js"></script>
+  <script src="js/views/videos.js"></script>
+  <script src="js/collections/video.js"></script>
+  <script src="js/views/results.js"></script>
+  <script src="js/routers/video.js"></script>-->
+
+</head>
+<body id="youtube">
+
+<div id="body-container">
+    <div class="yt-grid-box" id="yt-masthead-container">
+        <div id="yt-masthead">    
+            <div id="logo-container">
+            <div id="logo"></div>
+            </div>
+            <div id="yt-masthead-signin">
+				<span id="signinButton">
+					<span
+						class="g-signin"
+						data-callback="signinCallback"
+						data-clientid="692622804177-49rh418ifmdlgavklfh9vflfh08tgum9.apps.googleusercontent.com"
+						data-cookiepolicy="single_host_origin"
+						data-requestvisibleactions="http://schemas.google.com/AddActivity"
+						data-scope="http://gdata.youtube.com https://www.googleapis.com/auth/userinfo.profile"
+						data-width="wide"
+						data-height="standard">
+					</span>
+				</span>    					
+            </div>
+            <div id="yt-masthead-content">
+                <form action="#" class="search-form consolidated-form" id="masthead-search">
+                    <button role="button" type="button" class="search-btn-component search-button yt-uix-button yt-uix-button-default" id="search-btn" style="margin-top: 3px;"><span class="yt-uix-button-content">Search </span></button>
+                    <div class="masthead-search-terms-border " id="masthead-search-terms" style="top: 3px;">
+                        <label>
+                            <input type="text" title="Search" tabindex="1" value="" name="search_query" class="search-term yt-uix-form-input-bidi" id="search_query" style="outline: medium none;">
+                        </label>
+                    </div>
+                 </form>
+             </div>
+         </div>
+    </div>
+</div>
+
+
+<div id="search_results">
+    <div class="primary-col">
+        <div class="search-header yt-uix-expander yt-uix-expander-collapsed">  
+    </div>
+    <ol class="result-list context-data-container" id="search-list" style="padding-left: 0px;">     
+    </ol>
+</div>
+<script type="text/template" id="results-template">
+  <li class="yt-lockup2 yt-lockup2-video yt-uix-tile context-data-item clearfix translation-item">
+      <div class="yt-lockup2-thumbnail">
+          <a class="ux-thumb-wrap yt-uix-sessionlink yt-uix-contextlink contains-addto " href="#">
+              <span class="video-thumb ux-thumb yt-thumb-default-185 ">
+                  <span class="yt-thumb-clip">
+                      <span class="yt-thumb-clip-inner">
+                          <img width="185" src="<%- thumbnail.sqDefault %>" alt="thumbnail">
+                            <span class="vertical-align"></span>
+                        </span>
+                    </span>
+                </span>
+                <span class="video-time"><%- duration %></span>
+    </a>
+         </div>
+         <div class="yt-lockup2-content">  
+          <h3 class="yt-lockup2-title"><a href="#" class="yt-uix-sessionlink yt-uix-tile-link yt-uix-contextlink"><%- title %></a></h3>
+    <p class="yt-lockup2-meta">  
+              by <a class="yt-uix-sessionlink yt-user-name " href="#"><%- uploader %></a><span class="metadata-separator">•</span>hace 1 mes<span class="metadata-separator">•</span><%- viewCount %>
+    </p>
+            <p class="yt-lockup2-description"><%- description %>
+            <div class="yt-lockup2-badges">
+              <ul class="item-badge-line">
+                  <li class="item-badge-label "><%- category %></li>
+                </ul>
+            </div>
+        </div>
+    </li>
+</script>
+
+
+<script language="javascript">
+  (function() {
+    /*
+    var po = document.createElement('script'); 
+    po.type = 'text/javascript'; 
+    po.async = true;
+    po.src = 'https://apis.google.com/js/client:plusone.js';
+    var s = document.getElementsByTagName('script')[0]; 
+    s.parentNode.insertBefore(po, s);
+    */
+})();
+</script>
+
+
+
+</body>
+</html>
