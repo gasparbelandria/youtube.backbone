@@ -5,14 +5,13 @@ requirejs.config({
   baseUrl: "js",
   paths: {
     // Libraries
-    jquery: "libs/jquery",
-    underscore: "libs/underscore",
-    backbone: "libs/backbone",
-    videoModels: "models/video",
-    videosViews: 'views/videos',
-    videoCollections: 'collections/video',
-    resultsViews: 'views/results',
-    videoRouters: 'routers/video'
+    jquery            : "libs/jquery",
+    underscore        : "libs/underscore",
+    backbone          : "libs/backbone",
+    videoModels       : "models/video",
+    videosViews       : 'views/videos',
+    videoCollections  : 'collections/video',
+    resultsViews      : 'views/results'
   },
   shim: {
     backbone: {
