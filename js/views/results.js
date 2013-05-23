@@ -5,7 +5,6 @@ define([
 ], function($, _, Backbone){
     $(function($){
         AppView = Backbone.View.extend({
-<<<<<<< HEAD
           el: '#youtube',
           templateMore: _.template( $('#more-template').html() ),
           events: {
@@ -23,21 +22,6 @@ define([
             $(window).scroll(this.onScrollPage); 
             this.$search  = this.$('#search_query');
             this.$videos  = this.$('#search-results');
-=======
-
-          el: '#youtube',
-
-          events: {
-            'keypress #search_query': 'searchOnEnter',
-            'click #search-btn': 'search',
-          },
-
-          initialize: function(){
-            this.$search = this.$('#search_query');
-            this.$videos = this.$('#search-results');
-            //this.$viewer = this.$('#video-viewer');
-            //this.$wrapper = this.$('#video-wrapper');
->>>>>>> f06f711bec4efdcdc22c6e6f1094f3f0c101b495
 
             this.listenTo(videos, 'add', this.addOne);
             //this.listenTo(app.videos, 'reset', this.addAll);
@@ -45,7 +29,6 @@ define([
             //this.listenTo(app.videos, 'watch', this.watch);
           },
 
-<<<<<<< HEAD
           /*
           channels - 
           showMore: function(){
@@ -74,8 +57,6 @@ define([
             cScroll = cy;
           },
 
-=======
->>>>>>> f06f711bec4efdcdc22c6e6f1094f3f0c101b495
           render: function(){
 
           },
@@ -86,7 +67,6 @@ define([
           },
 
           addAll: function(){
-<<<<<<< HEAD
           console.log("i was here");
             this.$videos.html('');
             videos.each(this.addOne, this);
@@ -246,33 +226,6 @@ define([
           },
 
           searchOnEnter: function(e){
-=======
-            this.$videos.html('');
-            videos.each(this.addOne, this);
-          },
-
-          search: function(){
-            console.log("function search");
-            var q = this.$search.val().trim();
-
-            if(!q){
-              return;
-            }
-
-            console.log("buscando... "+q);
-            $.ajax({
-              type: "GET",
-              url: 'http://gdata.youtube.com/feeds/api/videos?q='+q+'&format=5&max-results=20&v=2&alt=jsonc',
-              dataType:"jsonp",
-              success: $.proxy(this.handleYoutubeResponse, this)
-            });
-
-            this.$search.val('');
-          },
-
-          searchOnEnter: function(e){
-          console.log("buscando enter");
->>>>>>> f06f711bec4efdcdc22c6e6f1094f3f0c101b495
             if(e.which !== "13"){
               return;
             }
@@ -287,21 +240,11 @@ define([
               return;
             }
 
-<<<<<<< HEAD
             videos.reset();
             var numResults = results.length;
             for(var i = 0; i < numResults; i++){
               videos.create(results[i]);
             }
-=======
-            var numResults = results.length;
-
-            for(var i = 0; i < numResults; i++){
-              videos.create(results[i]);
-            }
-
-            this.$search.val('');
->>>>>>> f06f711bec4efdcdc22c6e6f1094f3f0c101b495
           },
 
           watch: function(yt_video_id){
