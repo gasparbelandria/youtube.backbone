@@ -3,8 +3,13 @@ define([
   'underscore',
   'backbone'
 ], function($, _, Backbone){
+<<<<<<< HEAD
     alert("tpl");
     var tpl = {
+=======
+    var tpl = {
+    alert("TPL");
+>>>>>>> f06f711bec4efdcdc22c6e6f1094f3f0c101b495
         // Hash of preloaded templates for the app
         templates: {},
         // Recursively pre-load all the templates for the app.
