@@ -9,5 +9,5 @@ define([
 		});
 		channels = new Channels();
 	})();
-	//return Videos;
+	//return Channels;
 });

@@ -2,7 +2,7 @@ define([
   'jquery',
   'underscore',
   'backbone'
-], function($, _, Backbone, tpl){
+], function($, _, Backbone){
         $(function(){
             VideoView = Backbone.View.extend({
                 el:"#search-list",

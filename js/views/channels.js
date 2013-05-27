@@ -2,14 +2,14 @@ define([
   'jquery',
   'underscore',
   'backbone'
-], function($, _, Backbone, tpl){
+], function($, _, Backbone){
         $(function(){
             ChannelView = Backbone.View.extend({
                 el:"#search-list",
                 template: _.template( $('#channel-template').html() ),
                 initialize: function(){
-                    //this.listenTo(this.model, 'change', this.render);
-                    //this.listenTo(this.model, 'destroy', this.remove);
+                    //console.log("view channel");
+                    //
                 },
                 render: function(){
                     this.$el.append(this.template(this.model.toJSON()));

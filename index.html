@@ -8,31 +8,12 @@
   <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
-
 <!--
-
 https://github.com/ifandelse/TrafficCop
-
 http://jsondata.tumblr.com/post/30043887057/backbone-5
-
-
-
-
-  <script src="http://code.jquery.com/jquery-1.9.0.min.js" charset="utf-8"></script>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js" charset="utf-8"></script>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.10/backbone-min.js" charset="utf-8"></script>
 -->
-
-  <!--<script src="js/models/video.js"></script>
-  <script src="js/views/videos.js"></script>
-  <script src="js/collections/video.js"></script>
-  <script src="js/views/results.js"></script>
-  <script src="js/routers/video.js"></script>-->
-
 </head>
 <body id="youtube">
-
-
 <!--
   SEARCH
 -->
@@ -78,7 +59,7 @@ http://jsondata.tumblr.com/post/30043887057/backbone-5
     <div class="primary-col">
         <div class="search-header yt-uix-expander yt-uix-expander-collapsed">  
     </div>
-    <ol class="result-list context-data-container" id="search-list" style="padding-left: 0px;">     
+    <ol class="result-list context-data-container" id="search-list" style="padding-left: 0px;">   
     </ol>
 </div>
 <script type="text/template" id="results-template">
@@ -131,13 +112,13 @@ http://jsondata.tumblr.com/post/30043887057/backbone-5
             </div>
             </div>
             <div  id="yt-more-recommendations" style="float:left; width:48%; height:150px; border:0px solid red; text-align:right;"><strong>Recommended for You</strong><br />
-              <a href="#"><span id="4yt-more-recommendations-musicians">Musicians</span></a><br />
-              <a href="#"><span id="4yt-more-recommendations-comedians">Comedians</span></a><br />
-              <a href="#"><span id="4yt-more-recommendations-directors">Directors</span></a><br />
-              <a href="#"><span id="4yt-more-recommendations-gurus">Gurus</span></a><br />
-              <a href="#"><span id="4yt-more-recommendations-partners">Partners</span></a><br />
-              <a href="#"><span id="4yt-more-recommendations-sponsors">Sponsors</span></a><br />
-              <a href="#"><span id="4yt-more-recommendations-Reporters">Reporters</span></a><br />
+              <a href="#"><span id="yt-more-recommendations-musicians">Musicians</span></a><br />
+              <a href="#"><span id="yt-more-recommendations-comedians">Comedians</span></a><br />
+              <a href="#"><span id="yt-more-recommendations-directors">Directors</span></a><br />
+              <a href="#"><span id="yt-more-recommendations-gurus">Gurus</span></a><br />
+              <a href="#"><span id="yt-more-recommendations-partners">Partners</span></a><br />
+              <a href="#"><span id="yt-more-recommendations-sponsors">Sponsors</span></a><br />
+              <a href="#"><span id="yt-more-recommendations-reporters">Reporters</span></a><br />
             </div>
         </div>
 </script>
@@ -146,12 +127,20 @@ http://jsondata.tumblr.com/post/30043887057/backbone-5
   CHANNELS LIST
 -->
 <script type="text/template" id="channel-template">
-      <div id="channel" style="float:left; padding:18px; cursor:pointer;" title="<%- name %>">
-      <img src="<%- thumb %>" alt="<%- name %>"><br />
-      <strong><%- name %></strong><br />
-      <%- viewCount %><div>
+  <li class="yt-lockup2 yt-lockup2-video yt-uix-tile context-data-item clearfix translation-item">
+      <div id="channel" style="float:left; padding:5px; cursor:pointer;" title="<%- title %>">
+        <img src="<%- media$group %>" alt="<%- title %>"><br />
+      </div>
+      <div id="channel" style="float:left; padding:5px; cursor:pointer;" title="<%- title %>">
+        <strong><%- title %></strong><br />
+        by <%- author %></strong><br />
+        <%- yt$channelStatistics %> views<br />
+        <%- updated %> updated<br />
+      </div>
+  </li>
 </script>
 
+      <!--<%- viewCount %><div>-->
 
 <script language="javascript">
   (function() {

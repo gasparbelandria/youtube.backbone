@@ -41,16 +41,36 @@ define([
 				});
 			},
 			handleRePaging: function(response){
-				var results = response.data.items;
-				if(!results || results.length < 1){
-					//this.$videos.html('No videos found');
-					return;
-				}
-				var numResults = results.length;
-				for(var i = 0; i < numResults; i++){
-					videos.create(results[i]);
-				}
-			},
+				console.log(param.get("functions"));
+
+			    switch(param.get("functions")) {
+			        case 'channel':
+			            var results = response.feed.entry;
+			            if(!results || results.length < 1){
+			              return;
+			            }
+			            var numResults = results.length;
+			            for(var i = 0; i < numResults; i++){
+			              channels.reset();
+			              channels.create(results[i]);
+			            }			        
+			        break;
+			        default:
+						var results = response.data.items;
+						if(!results || results.length < 1){
+							return;
+						}
+						var numResults = results.length;
+						for(var i = 0; i < numResults; i++){
+							videos.reset();
+							videos.create(results[i]);
+						}
+			        break;
+			    }
+
+
+
+				},
 		});
 		param = new Param();
 	})();

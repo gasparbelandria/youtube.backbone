@@ -229,7 +229,6 @@ define([
             if(e.which !== "13"){
               return;
             }
-
             this.search();
           },
 
@@ -240,9 +239,9 @@ define([
               return;
             }
 
-            videos.reset();
             var numResults = results.length;
             for(var i = 0; i < numResults; i++){
+              videos.reset();
               videos.create(results[i]);
             }
           },
