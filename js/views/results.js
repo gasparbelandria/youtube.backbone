@@ -17,25 +17,18 @@ define([
             'click #yt-more-music':'searchMusic',
             'click #yt-more-news':'searchNews',
             'click #yt-more-gaming':'searchGaming',
+            'click #video': 'viewVideo',
           },
           initialize: function(){
-            $(window).scroll(this.onScrollPage); 
-            this.$search  = this.$('#search_query');
-            this.$videos  = this.$('#search-results');
+            $(window).scroll(this.onScrollPage);
 
+            this.$search    = this.$('#search_query');
+            this.$videos    = this.$('#search-results');
             this.listenTo(videos, 'add', this.addOne);
             //this.listenTo(app.videos, 'reset', this.addAll);
             //this.listenTo(app.videos, 'all', this.render);
-            //this.listenTo(app.videos, 'watch', this.watch);
+            //this.listenTo(videos, 'watch', this.watch);
           },
-
-          /*
-          channels - 
-          showMore: function(){
-              $("#search-list").html("");
-              $("#search-list").append(this.templateMore());
-          },
-          */
 
           showMore: function(){
               $("#search-list").html("");
@@ -258,6 +251,28 @@ define([
           stopWatch: function(){
             this.$viewer.hide();
             this.$videos.show();
+          },
+
+          viewVideo: function(video){
+            /*
+             * I will try to make it more elegant with jquery, but this is what I came up so far
+             */
+            if ($('#videoDetail').length)$('#videoDetail').remove();
+            var style = "width:100%;height:425px;border:10px;margin-top:2px;";
+            var media = video.currentTarget.getAttribute('videourl');
+            var sp1 = document.createElement("iframe");
+                sp1.src=media;
+                sp1.width="100%";
+                sp1.height="425px";
+                sp1.style=style;
+                sp1.id="videoDetail";
+            var sp2 = video.currentTarget;
+            var parentDiv = sp2.parentNode;
+            parentDiv.insertBefore(sp1, sp2);
+            var scroll = $('#videoDetail').offset().top - 10;
+            $("html, body").animate({ 
+            scrollTop: scroll
+            }, 500);
           }
         });
         var appview = new AppView();

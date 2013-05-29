@@ -12,6 +12,7 @@ define([
                 this.set('duration', seconds2time (this.get('duration')));
                 this.set('description', cut ( this.get('description'), 90 ));
                 this.set('title', cut ( this.get('title'), 35 ));
+                this.set('content', getVideo (this.get('content')));
                 function seconds2time(seconds){
                     var hours   = Math.floor(seconds / 3600);
                     var minutes = Math.floor((seconds - (hours * 3600)) / 60);
@@ -39,6 +40,10 @@ define([
                         return short.replace(/\s+\S*$/, "");
                     return short;
                 };
+
+                function getVideo(content){
+                    return content[5];
+                };
                 
             },
             defaults: {
@@ -50,7 +55,8 @@ define([
                 "url":"",
                 "thumbnail":"",
                 "uploader":"",
-                "viewCount":""
+                "viewCount":"",
+                "content":""
             },
             //url: "video/"
             sync: function(){
