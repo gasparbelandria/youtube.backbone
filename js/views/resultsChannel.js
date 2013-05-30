@@ -170,7 +170,6 @@ define([
                     functions:'channel'});
             this.gotoSearch();
           },
-
           gotoSearch: function(){
             $("#search-list").html("");
             var parameters = param.get("api");

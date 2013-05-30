@@ -18,6 +18,8 @@ define([
             'click #yt-more-news':'searchNews',
             'click #yt-more-gaming':'searchGaming',
             'click #video': 'viewVideo',
+                        'click #channel': 'searchChannel',
+
           },
           initialize: function(){
             $(window).scroll(this.onScrollPage);
@@ -201,15 +203,36 @@ define([
                     functions:'music'});
             this.gotoSearch();
           },
+          /*
+           * SEARCH ANY CHANNEL
+           */
+          searchChannel:function(channel){
+            $("#search-list").html("");
+            var q = channel.currentTarget.getAttribute('author');
+            param.set({
+                    validPagination:true,
+                    api:'https://gdata.youtube.com/feeds/api/videos',
+                    start_index:'1',
+                    max_results:'20',
+                    q:q,
+                    alt:'jsonc',
+                    format:'5',
+                    v:'2',
+                    region:'',
+                    use_token:'0',
+                    functions:'search'});
+            this.gotoSearch();
+          },
+
           gotoSearch: function(){
             var parameters = param.get("api");
                 parameters = parameters+"?start-index="+param.get("start_index");
                 parameters = parameters+"&max-results="+param.get("max_results");
                 if(param.get("q")!=""){parameters = parameters+"&q="+param.get("q");}
                 if(param.get("format")!=""){parameters = parameters+"&format="+param.get("format");}
+                if(param.get("alt")!=""){parameters = parameters+"&alt="+param.get("alt");}
                 if(param.get("region")!=""){parameters = parameters+"&region="+param.get("region");}
                 parameters = parameters+"&v="+param.get("v");
-                parameters = parameters+"&alt="+param.get("alt");
             $.ajax({
               type: "GET",
               url: parameters,
@@ -219,9 +242,8 @@ define([
           },
 
           searchOnEnter: function(e){
-            if(e.which !== "13"){
-              return;
-            }
+            console.log(this.$search.val()+" - "+e.which);
+            if(e.which !== "13")return;
             this.search();
           },
 

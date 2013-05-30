@@ -42,7 +42,7 @@ http://jsondata.tumblr.com/post/30043887057/backbone-5
                     <a class="yt-uix-button yt-uix-sessionlink yt-uix-button-default" href="#"><span id="more" class="yt-uix-button-content">More</span></a>
                 </span>
 
-                <form action="#" class="search-form consolidated-form" id="masthead-search">
+                <form class="search-form consolidated-form" id="masthead-search">
                     <button role="button" type="button" class="search-btn-component search-button yt-uix-button yt-uix-button-default" id="search-btn" style="margin-top: 3px;"><span class="yt-uix-button-content">Search </span></button>
                     <div class="masthead-search-terms-border " id="masthead-search-terms" style="top: 3px;">
                         <label>
@@ -128,8 +128,8 @@ http://jsondata.tumblr.com/post/30043887057/backbone-5
   CHANNELS LIST
 -->
 <script type="text/template" id="channel-template">
-  <li class="yt-lockup2 yt-lockup2-video yt-uix-tile context-data-item clearfix translation-item">
-      <div id="channel" style="float:left; padding:5px; cursor:pointer;" title="<%- title %>">
+  <li class="yt-lockup2 yt-lockup2-video yt-uix-tile context-data-item clearfix translation-item" id="channel" author="<%- author %>">
+      <div style="float:left; padding:5px; cursor:pointer;" title="<%- title %>">
         <img src="<%- media$group %>" alt="<%- title %>"><br />
       </div>
       <div id="channel" style="float:left; padding:5px; cursor:pointer;" title="<%- title %>">
