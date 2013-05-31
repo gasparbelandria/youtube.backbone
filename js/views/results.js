@@ -23,7 +23,6 @@ define([
           },
           initialize: function(){
             $(window).scroll(this.onScrollPage);
-
             this.$search    = this.$('#search_query');
             this.$videos    = this.$('#search-results');
             this.listenTo(videos, 'add', this.addOne);

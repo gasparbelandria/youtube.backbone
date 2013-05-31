@@ -10,6 +10,7 @@ requirejs.config({
     backbone            : "libs/backbone",
     paramModels         : "models/param",
     videoModels         : "models/video",
+    signinViews         : 'views/signin',
     videosViews         : 'views/videos',
     videoCollections    : 'collections/video',
     resultsViews        : 'views/results',

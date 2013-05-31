@@ -8,10 +8,6 @@
   <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
-<!--
-https://github.com/ifandelse/TrafficCop
-http://jsondata.tumblr.com/post/30043887057/backbone-5
--->
 </head>
 <body id="youtube">
 <!--
@@ -41,7 +37,6 @@ http://jsondata.tumblr.com/post/30043887057/backbone-5
                 <span id="masthead-upload-button-group">
                     <a class="yt-uix-button yt-uix-sessionlink yt-uix-button-default" href="#"><span id="more" class="yt-uix-button-content">More</span></a>
                 </span>
-
                 <form class="search-form consolidated-form" id="masthead-search">
                     <button role="button" type="button" class="search-btn-component search-button yt-uix-button yt-uix-button-default" id="search-btn" style="margin-top: 3px;"><span class="yt-uix-button-content">Search </span></button>
                     <div class="masthead-search-terms-border " id="masthead-search-terms" style="top: 3px;">
@@ -94,7 +89,7 @@ http://jsondata.tumblr.com/post/30043887057/backbone-5
 </script>
 
 <!--
-  MORE
+  MORE OPTION TEMPLATE
 -->
 <script type="text/template" id="more-template">
         <div class="" id="yt-account-more" style="background-color:#eee; border-bottom-color:#ccc;">
@@ -125,7 +120,7 @@ http://jsondata.tumblr.com/post/30043887057/backbone-5
 </script>
 
 <!--
-  CHANNELS LIST
+  CHANNELS LIST TEMPLATE
 -->
 <script type="text/template" id="channel-template">
   <li class="yt-lockup2 yt-lockup2-video yt-uix-tile context-data-item clearfix translation-item" id="channel" author="<%- author %>">
@@ -139,21 +134,6 @@ http://jsondata.tumblr.com/post/30043887057/backbone-5
         <%- updated %> updated<br />
       </div>
   </li>
-</script>
-
-      <!--<%- viewCount %><div>-->
-
-<script language="javascript">
-  (function() {
-    /*
-    var po = document.createElement('script'); 
-    po.type = 'text/javascript'; 
-    po.async = true;
-    po.src = 'https://apis.google.com/js/client:plusone.js';
-    var s = document.getElementsByTagName('script')[0]; 
-    s.parentNode.insertBefore(po, s);
-    */
-})();
 </script>
 <script data-main="config" src="require.js"></script>
 </body>
