@@ -1,14 +1,5 @@
-<div id="search_results">
-    <div class="primary-col">
-        <div class="search-header yt-uix-expander yt-uix-expander-collapsed">  
-    </div>
-    <ol class="result-list context-data-container" id="search-list" style="padding-left: 0px;">     
-    </ol>
-</div>
-<script type="text/template" id="results-template">
-  <!-- A VIDEO RESULT-->      
-  <li class="yt-lockup2 yt-lockup2-video yt-uix-tile context-data-item clearfix translation-item">
-      <div class="yt-lockup2-thumbnail">
+  <li class="yt-lockup2 yt-lockup2-video yt-uix-tile context-data-item clearfix translation-item" id="video" videoUrl="<%- content %>">
+      <div class="yt-lockup2-thumbnail" videoTitle="<%- title %>" videoId="<%- id %>">
           <a class="ux-thumb-wrap yt-uix-sessionlink yt-uix-contextlink contains-addto " href="#">
               <span class="video-thumb ux-thumb yt-thumb-default-185 ">
                   <span class="yt-thumb-clip">
@@ -19,20 +10,19 @@
                     </span>
                 </span>
                 <span class="video-time"><%- duration %></span>
-    </a>
+          </a>
          </div>
          <div class="yt-lockup2-content">  
           <h3 class="yt-lockup2-title"><a href="#" class="yt-uix-sessionlink yt-uix-tile-link yt-uix-contextlink"><%- title %></a></h3>
     <p class="yt-lockup2-meta">  
-              by <a class="yt-uix-sessionlink yt-user-name " href="#"><%- uploader %></a><span class="metadata-separator">•</span>hace 1 mes<span class="metadata-separator">•</span><%- viewCount %>
+              by <a class="yt-uix-sessionlink yt-user-name " href="#" id="uploader"><%- uploader %></a><span class="metadata-separator">•</span> hace 1 mes<span class="metadata-separator">•</span><%- viewCount %>
     </p>
             <p class="yt-lockup2-description"><%- description %>
             <div class="yt-lockup2-badges">
               <ul class="item-badge-line">
                   <li class="item-badge-label "><%- category %></li>
+                  <li class="item-badge-label "><a href="<%- content %>">Watch</a></li>
                 </ul>
             </div>
         </div>
     </li>
-<!-- A VIDEO RESULT-->        
-</script>

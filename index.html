@@ -10,131 +10,14 @@
   <![endif]-->
 </head>
 <body id="youtube">
-<!--
-  SEARCH
--->
-<div id="body-container">
-    <div class="yt-grid-box" id="yt-masthead-container">
-        <div id="yt-masthead">    
-            <div id="logo-container">
-            <div id="logo"></div>
-            </div>
-            <div id="yt-masthead-signin">
-				<span id="signinButton">
-					<span
-						class="g-signin"
-						data-callback="signinCallback"
-						data-clientid="692622804177-49rh418ifmdlgavklfh9vflfh08tgum9.apps.googleusercontent.com"
-						data-cookiepolicy="single_host_origin"
-						data-requestvisibleactions="http://schemas.google.com/AddActivity"
-						data-scope="http://gdata.youtube.com https://www.googleapis.com/auth/userinfo.profile"
-						data-width="wide"
-						data-height="standard">
-					</span>
-				</span>    					
-            </div>
-            <div id="yt-masthead-content">
-                <span id="masthead-upload-button-group">
-                    <a class="yt-uix-button yt-uix-sessionlink yt-uix-button-default" href="#"><span id="more" class="yt-uix-button-content">More</span></a>
-                </span>
-                <form class="search-form consolidated-form" id="masthead-search">
-                    <button role="button" type="button" class="search-btn-component search-button yt-uix-button yt-uix-button-default" id="search-btn" style="margin-top: 3px;"><span class="yt-uix-button-content">Search </span></button>
-                    <div class="masthead-search-terms-border " id="masthead-search-terms" style="top: 3px;">
-                        <label>
-                            <input type="text" title="Search" tabindex="1" value="" name="search_query" class="search-term yt-uix-form-input-bidi" id="search_query" style="outline: medium none;">
-                        </label>
-                    </div>
-                 </form>
-             </div>
-         </div>
-    </div>
-</div>
-
-<div id="search_results">
-    <div class="primary-col">
-        <div class="search-header yt-uix-expander yt-uix-expander-collapsed">  
-    </div>
-    <ol class="result-list context-data-container" id="search-list" style="padding-left: 0px;">   
-    </ol>
-</div>
-<script type="text/template" id="results-template">
-  <li class="yt-lockup2 yt-lockup2-video yt-uix-tile context-data-item clearfix translation-item" id="video" videoUrl="<%- content %>">
-      <div class="yt-lockup2-thumbnail" videoTitle="<%- title %>" videoId="<%- id %>">
-          <a class="ux-thumb-wrap yt-uix-sessionlink yt-uix-contextlink contains-addto " href="#">
-              <span class="video-thumb ux-thumb yt-thumb-default-185 ">
-                  <span class="yt-thumb-clip">
-                      <span class="yt-thumb-clip-inner">
-                          <img width="185" src="<%- thumbnail.sqDefault %>" alt="thumbnail">
-                            <span class="vertical-align"></span>
-                        </span>
-                    </span>
-                </span>
-                <span class="video-time"><%- duration %></span>
-    </a>
-         </div>
-         <div class="yt-lockup2-content">  
-          <h3 class="yt-lockup2-title"><a href="#" class="yt-uix-sessionlink yt-uix-tile-link yt-uix-contextlink"><%- title %></a></h3>
-    <p class="yt-lockup2-meta">  
-              by <a class="yt-uix-sessionlink yt-user-name " href="#" id="uploader"><%- uploader %></a><span class="metadata-separator">•</span> hace 1 mes<span class="metadata-separator">•</span><%- viewCount %>
-    </p>
-            <p class="yt-lockup2-description"><%- description %>
-            <div class="yt-lockup2-badges">
-              <ul class="item-badge-line">
-                  <li class="item-badge-label "><%- category %></li>
-                  <li class="item-badge-label "><a href="<%- content %>">Watch</a></li>
-                </ul>
-            </div>
-        </div>
-    </li>
-</script>
-
-<!--
-  MORE OPTION TEMPLATE
--->
-<script type="text/template" id="more-template">
-        <div class="" id="yt-account-more" style="background-color:#eee; border-bottom-color:#ccc;">
-          <div style="float:left; width:48%; height:150px; border:0px solid blue;"><strong>Channels</strong><br />
-            <div style="float:left; width:24%;">
-                <a href="#"><span id="yt-more-popular"><img src='https://i1.ytimg.com/li/tnHdj3df7iM/default.jpg' width='40' height='40' style="margin:3px;">Popular</span></a><br />
-                <a href="#"><span id="yt-more-music"><img src='https://i1.ytimg.com/li/p-Rdqh3z4Uc/default.jpg' width='40' height='40' style="margin:3px;">Music</span></a><br />
-            </div>
-            <div style="float:left; width:24%;">
-                <a href="#"><span id="yt-more-movies"><img src='https://lh3.googleusercontent.com/-DIjHsEMMaRE/AAAAAAAAAAI/AAAAAAAAAAA/q6whn_JcUH8/s88-c-k/photo.jpg' width='40' height='40' style="margin:3px;">Movies</span></a><br />
-                <a href="#"><span id="yt-more-news"><img src='https://i1.ytimg.com/li/PvDBPPFfuaM/default.jpg' width='40' height='40' style="margin:3px;">News</span></a><br />
-            </div>
-            <div style="float:left; width:24%;">
-                <a href="#"><span id="yt-more-sport"><img src='https://i4.ytimg.com/li/7Dr1BKwqctY/default.jpg' width='40' height='40' style="margin:3px;">Sport</span></a><br />
-                <a href="#"><span id="yt-more-gaming"><img src='https://i1.ytimg.com/li/hfZhJdhTqX8/default.jpg' width='40' height='40' style="margin:3px;">Gaming</span></a><br />
-            </div>
-            </div>
-            <div  id="yt-more-recommendations" style="float:left; width:48%; height:150px; border:0px solid red; text-align:right;"><strong>Recommended for You</strong><br />
-              <a href="#"><span id="yt-more-recommendations-musicians">Musicians</span></a><br />
-              <a href="#"><span id="yt-more-recommendations-comedians">Comedians</span></a><br />
-              <a href="#"><span id="yt-more-recommendations-directors">Directors</span></a><br />
-              <a href="#"><span id="yt-more-recommendations-gurus">Gurus</span></a><br />
-              <a href="#"><span id="yt-more-recommendations-partners">Partners</span></a><br />
-              <a href="#"><span id="yt-more-recommendations-sponsors">Sponsors</span></a><br />
-              <a href="#"><span id="yt-more-recommendations-reporters">Reporters</span></a><br />
-            </div>
-        </div>
-</script>
-
-<!--
-  CHANNELS LIST TEMPLATE
--->
-<script type="text/template" id="channel-template">
-  <li class="yt-lockup2 yt-lockup2-video yt-uix-tile context-data-item clearfix translation-item" id="channel" author="<%- author %>">
-      <div style="float:left; padding:5px; cursor:pointer;" title="<%- title %>">
-        <img src="<%- media$group %>" alt="<%- title %>"><br />
+  <div id='header'></div>
+  <div id="search_results">
+      <div class="primary-col">
+          <div class="search-header yt-uix-expander yt-uix-expander-collapsed">  
       </div>
-      <div id="channel" style="float:left; padding:5px; cursor:pointer;" title="<%- title %>">
-        <strong><%- title %></strong><br />
-        by <%- author %></strong><br />
-        <%- yt$channelStatistics %> views<br />
-        <%- updated %> updated<br />
-      </div>
-  </li>
-</script>
-<script data-main="config" src="require.js"></script>
+      <ol class="result-list context-data-container" id="search-list" style="padding-left: 0px;">   
+      </ol>
+  </div>
+  <script data-main="config" src="require.js"></script>
 </body>
 </html>

@@ -170,16 +170,17 @@ define([
                     functions:'channel'});
             this.gotoSearch();
           },
+
           gotoSearch: function(){
             $("#search-list").html("");
             var parameters = param.get("api");
-                parameters = parameters+"?start-index="+param.get("start_index");
-                parameters = parameters+"&max-results="+param.get("max_results");
+                if(param.get("start_index")!=""){parameters = parameters+"?start-index="+param.get("start_index");}
+                if(param.get("max_results")!=""){parameters = parameters+"&max-results="+param.get("max_results");}
                 if(param.get("q")!=""){parameters = parameters+"&q="+param.get("q");}
                 if(param.get("format")!=""){parameters = parameters+"&format="+param.get("format");}
+                if(param.get("alt")!=""){parameters = parameters+"&alt="+param.get("alt");}
                 if(param.get("region")!=""){parameters = parameters+"&region="+param.get("region");}
-                parameters = parameters+"&v="+param.get("v");
-                parameters = parameters+"&alt="+param.get("alt");
+                if(param.get("v")!=""){parameters = parameters+"&v="+param.get("v");}
             $.ajax({
               type: "GET",
               url: parameters,

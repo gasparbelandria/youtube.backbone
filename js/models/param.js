@@ -41,8 +41,6 @@ define([
 				});
 			},
 			handleRePaging: function(response){
-				console.log(param.get("functions"));
-
 			    switch(param.get("functions")) {
 			        case 'channel':
 			            var results = response.feed.entry;
