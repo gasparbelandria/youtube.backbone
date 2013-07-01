@@ -9,5 +9,5 @@ define([
 		});
 		videos = new Videos();
 	})();
-	//return Videos;
+	return Videos; // hide
 });

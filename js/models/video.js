@@ -63,7 +63,7 @@ define([
                 return;
             }
         });
-        //var video = new Video();
-        return Video;
+        var video = new Video();
     })();
+    return Video;
 });

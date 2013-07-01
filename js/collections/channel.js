@@ -9,5 +9,5 @@ define([
 		});
 		channels = new Channels();
 	})();
-	//return Channels;
+	return Channels; // hide
 });

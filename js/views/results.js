@@ -49,6 +49,7 @@ define([
 
           },
           addOne: function(video){
+            console.log(video)
             var view = new VideoView({ model: video });
             this.$videos.append(view.render().el);
           },

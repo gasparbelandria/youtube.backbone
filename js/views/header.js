@@ -56,5 +56,5 @@ define([
 		*/
 	});
 	var header = new Header();
-	//return Header;
+	return Header; // hide
 });
