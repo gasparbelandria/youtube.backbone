@@ -11,4 +11,4 @@ This query the API using GET requests, so get videos and channels.
 * For this plugin does not need to do any special configuration in Google because we're not doing `Sign In` still. 
 * To run just download and put `index.html` in the browser, no need `xamp` or `localhost`, only need have Internet connection.
 
-You can view this here: [Youtube Plugin](http://www.gasparbelandria.com/backbone/youtube.backbone)
+You can view this here: [Youtube Plugin](http://backboneros.com/youtube.backbone)
